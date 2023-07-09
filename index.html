@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recruitment Solution</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
+    rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+    <header>
+        <h1>Recruitment Solution</h1>
+        <nav class="navbar">
+          <ul id="myDIV">
+            <li><a href="#home" class="navopt Active">Home</a></li>
+            <li><a href="#about"class="navopt">About</a></li>
+            <li><a href="#contact"class="navopt">Contact</a></li>
+            <li><a href="#search"class="navopt">Search</a></li>
+            <li><a href="#" id="Dlogin"class="navopt">Login</a></li>
+          </ul>
+        </nav>
+        <div class="burger-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+      </header>
+      <section class="menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <hr/>
+          <li><a href="#about">About</a></li>
+          <hr/>
+          <li><a href="#contact">Contact</a></li>
+          <hr/>
+          <li><a href="#search">Search</a></li>
+          <hr/>
+          <li><a href="#" id="Mlogin">Login</a></li>
+          </ul>
+      </section>
+  <section class="hero" id="home">
+    <h2>Welcome to the Seamless Hiring Experience!</h2>
+    <p>Efficiently find and evaluate top candidates for your company.</p>
+    <a href="#" class="cta-button">Learn More</a>
+  </section>
+
+  <section class="features" id="about">
+    <div class="feature_explain">
+        <div class="hilight">
+        <h1>Transform Your Hiring Process<br/> with<br/> Recruitment Solution</h1>
+        <h2>Find, Evaluate, and Hire Top Candidates Effortlessly</h2>
+       </div>
+    <h2>Key Features</h2>
+    <ul>
+      <li>Advanced candidate search</li>
+      <li>Customizable job role filters</li>
+      <li>Location-based search</li>
+      <li>Effortless candidate ranking</li>
+      <li>Secure and user-friendly</li>
+    </ul>
+</div>
+<div>
+    <img src="image2.png" alt="image">
+</div>
+  </section>
+  <section class="cellender_sec">
+    <div class="calendar">
+        <div class="callenderheader">
+          <button id="prevButton">&lt;</button>
+          <h2 id="monthYear"></h2>
+          <button id="nextButton">&gt;</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+      <div class="notification_sec">
+        <div class="notification-Header">Notification</div>
+        <ul>
+            <li>Office meeting tomorrow at 9:00 AM in the conference room.</li>
+            <li>Office closed this Friday for maintenance. Resume on Monday</li>
+            <li>Employee Appreciation Day celebration at 3:00 PM in the break room.</li>
+        </ul>
+
+      </div>
+  </section>
+
+  <section class="login_register_sec">
+    <div class="container">
+    <div id="loginForm">
+      <div class="lrHeader">
+      <h2>Login</h2>
+      <p class="Lcross">&#10060;</p>
+    </div>
+      <form onsubmit="login(event)">
+        <div class="form-group">
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Login">
+        </div>
+      </form>
+      <div class="toggle-forms">
+        <button onclick="toggleForms()">Don't have an account? Register</button>
+      </div>
+    </div>
+
+    <div id="registrationForm" class="hidden">
+      <div class="lrHeader">
+        <h2>Registration</h2>
+        <p class="Rcross">&#10060;</p>
+      </div>
+      <form onsubmit="register(event)">
+        <div class="form-group">
+          <label for="registerEmail">Email:</label>
+          <input type="email" id="registerEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password:</label>
+          <input type="password" id="registerPassword" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+      <div class="toggle-forms">
+        <button onclick="toggleForms()">Already have an account? Login</button>
+      </div>
+    </div>
+  </div>
+  </section>
+
+<section class="Search_sec" id="search">
+  <div class="search-form">
+    <h2>Search Candidates</h2>
+    <form onsubmit="searchCandidates(event)">
+      <div>
+        <label for="location">Location:</label>
+        <select id="location">
+          <option value="all">All</option>
+          <option value="New Delhi">New Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Odisha">Odisha</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div>
+        <label for="job-role">Job Role:</label>
+        <select id="job-role">
+          <option value="all">All</option>
+          <option value="Frontend Developer">Frontend Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+          <option value="Data Scientist">Data Scientist</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Search">
+      </div>
+    </form>
+  </div>
+
+  <div class="search-results">
+    <h3>Search Results</h3>
+    <ul id="candidates-list"></ul>
+    <div id="search-suggestions" class="search-suggestions"></div>
+  </div>
+
+</section>
+
+<!-- for Contact -->
+
+<section class="contact" id="contact">
+
+  <div class="contact-content section-content">
+
+    <p class="section-subtitle">Contact</p>
+
+    <h2 class="h3 section-title">Have You Any Query?<br/> Please Drop a Message</h2>
+
+    <p class="section-text">
+      Get in touch and let me know how i can help. Fill out the form and i’ll be in touch as soon as possible.
+    </p>
+
+    <ul class="contact-list">
+
+      <li class="contact-list-item">
+
+        <div class="contact-item-icon">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <div class="wrapper">
+          <h3 class="h4 contact-item-title">Address:</h3>
+
+          <address class="contact-info">
+            Jaleswar,Balasore,Odisha,India-756032
+          </address>
+        </div>
+
+      </li>
+
+      <li class="contact-list-item">
+
+        <div class="contact-item-icon">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+
+        <div class="wrapper">
+          <h3 class="h4 contact-item-title">Phone:</h3>
+
+          <a href="tel:01234567789" class="contact-info">(11) 234 567 789</a>
+           <br/>
+          <a href="tel:09765432200" class="contact-info">(+91) 7438756195</a>
+        </div>
+
+      </li>
+
+      <li class="contact-list-item">
+
+        <div class="contact-item-icon">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <div class="wrapper">
+          <h3 class="h4 contact-item-title">Email:</h3>
+
+          <a href="mailto:hr@requirmentsolution.com" class="contact-info">hr@requirmentsolution.com</a>
+           <br/>
+          <a href="mailto:support@requirmentsolution.com" class="contact-info">support@requirmentsolution.com</a>
+        </div>
+
+      </li>
+
+      <li>
+        <ul class="contac-social-list">
+
+          <li>
+            <a href="" target="_blank" class="contact-social-link">
+              <div class="tooltip">Facebook</div>
+
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="" target="_blank" class="contact-social-link">
+              <div class="tooltip">Twitter</div>
+
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="" target="_blank" class="contact-social-link">
+              <div class="tooltip">Linkedin</div>
+
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="" target="_blank" class="contact-social-link">
+              <div class="tooltip">Youtube</div>
+
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <form  class="contact-form" onsubmit="sendMassage();reset();return false">
+
+    <div class="form-wrapper">
+
+      <label for="name" class="form-label">Name</label>
+
+      <div class="input-wrapper">
+
+        <input type="text" name="name" id="name" required placeholder="e.g Amulya Senapati" class="input-field">
+
+        <ion-icon name="person-circle"></ion-icon>
+
+      </div>
+
+    </div>
+
+    <div class="form-wrapper">
+
+      <label for="email" class="form-label">Email</label>
+
+      <div class="input-wrapper">
+
+        <input type="email" name="email" id="email" required placeholder="e.g amulya@mail.com"
+          class="input-field">
+
+        <ion-icon name="mail"></ion-icon>
+
+      </div>
+
+    </div>
+
+    <div class="form-wrapper">
+
+      <label for="phone" class="form-label">Phone</label>
+
+      <div class="input-wrapper">
+
+        <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field">
+
+        <ion-icon name="call"></ion-icon>
+
+      </div>
+
+    </div>
+
+    <div class="form-wrapper">
+
+      <label for="message" class="form-label">Message</label>
+
+      <div class="input-wrapper">
+
+        <textarea name="message" id="message" required placeholder="Write message..."
+          class="input-field"></textarea>
+
+        <ion-icon name="chatbubbles"></ion-icon>
+
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+
+  </form>
+
+</section>
+
+
+
+  <footer>
+    <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+  </footer>
+
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="script.js"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+</html>
